@@ -273,7 +273,7 @@ def check_message_against_rules(
                     )
                 else:
                     # Check if referred message matches the expected type
-                    expected_type = f"osi3.{rule['refers_to'].strip("'")}"
+                    expected_type = f"""osi3.{rule['refers_to'].strip("'")}"""
                     if referred_message.DESCRIPTOR.full_name != expected_type:
                         result.register_issue(
                             checker_bundle_name=constants.BUNDLE_NAME,
